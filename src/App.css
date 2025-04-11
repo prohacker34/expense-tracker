@@ -1,1 +1,29 @@
+h1{
+    padding: 0%;
+    margin: 0;
 
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+
+  }
+
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+input[type=text] {
+  float: left;
+  padding: 6px;
+  border: none;
+  background-color: white;
+ background-image: url('https://pngtree.com/freepng/vector-search-icon_3783210.html');
+  font-size: 17px;
+}
