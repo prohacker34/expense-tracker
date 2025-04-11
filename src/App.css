@@ -19,7 +19,7 @@ table {
   tr:nth-child(even) {
     background-color: #dddddd;
   }
-input[type=text] {
+#input {
   float: left;
   padding: 6px;
   border: none;
