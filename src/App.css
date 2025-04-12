@@ -27,6 +27,7 @@ table {
   background-color: white;
  background-image: url('https://pngtree.com/freepng/vector-search-icon_3783210.html');
   font-size: 17px;
+  width: 50px;
 }
 input [type="text"]{
     border-radius: 20px;
@@ -51,6 +52,7 @@ input [type="text"]{
 .form-input{
     display: flex;
     border-radius: 10px;
+    height: 25px;
 
 
 }
