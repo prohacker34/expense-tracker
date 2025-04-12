@@ -1,5 +1,6 @@
 import React from 'react'
 import Table from './Table'
+
 function Form() {
   return (
     <div id='form-submit'>
@@ -11,9 +12,9 @@ function Form() {
             <input type="text"  className='form-input'/><br />
             <input type="text"  className='form-input'/><br />
             <input type="text"  className='form-input'/><br />
-
+            <button type='submit'>submit</button>
         </form>
-        <Search />
+
         <Table />
     </div>
   )

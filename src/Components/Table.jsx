@@ -3,6 +3,7 @@ import React from 'react'
 function Table() {
   return (
     <div id='container'>
+       <input id='input' type='text'placeholder='search' ></input>
  <table>
   <tr>
     <th>Expense</th>

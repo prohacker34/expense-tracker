@@ -37,9 +37,8 @@ input [type="text"]{
     display: flex;
     margin-top: 0%;
     align-self: start;
-    margin-left: 200px;
-
-
+    flex-direction: column;
+    margin-left: 20px;
 }
 #search{
     display: flex;
