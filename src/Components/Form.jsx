@@ -1,15 +1,20 @@
 import React from 'react'
-
+import Table from './Table'
 function Form() {
   return (
-    <div>
+    <div id='form-submit'>
         <form>
             <h1>Add Expense</h1>
-            <input type="text" /><br />
-            <input type="text" /><br />
-            <input type="text" /><br />
-            <input type="text" /><br />
+            <p>Enter your details below</p>
+            <input type="text"  className='form-input'/><br />
+            <input type="text"  className='form-input'/><br />
+            <input type="text"  className='form-input'/><br />
+            <input type="text"  className='form-input'/><br />
+            <input type="text"  className='form-input'/><br />
+
         </form>
+        <Search />
+        <Table />
     </div>
   )
 }
