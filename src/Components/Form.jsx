@@ -12,7 +12,7 @@ function Form() {
             <input type="text"  className='form-input'/><br />
             <input type="text"  className='form-input'/><br />
             <input type="text"  className='form-input'/><br />
-            <button type='submit'>submit</button>
+            <button type='submit' id='button'>submit</button>
         </form>
 
         <Table />
