@@ -1,6 +1,7 @@
 import Navbar from "./Components/Navbar"
 
 import Form from "./Components/Form"
+
 function App() {
 
 
@@ -8,7 +9,6 @@ function App() {
 <div>
   <Navbar />
   <Form />
-
 
 
 </div>

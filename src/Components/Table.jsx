@@ -1,32 +1,41 @@
 import React from 'react'
 
-function Table() {
+function Table({items}) {
   return (
     <div id='container'>
        <input id='input' type='text'placeholder='search' ></input>
  <table>
+  <thead>
   <tr>
     <th>Expense</th>
-    <th>food</th>
     <th>description</th>
+    <th>category</th>
     <th>amount</th>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
+    <th>date</th>
+    </tr>
+    {items.map((item)=>
+        <tr>
+        <td>{item.expense}</td>
+        <td>{item.description}</td>
+        <td>{item.category}</td>
+        <td>{item.amount}</td>
+        <td>{item.date}</td>
+      </tr>
+    )}
 
+  <tr>
+    <td>lunch</td>
+    <td>ugali</td>
+    <td>delicious</td>
+    <td>200</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  </thead>
 
 </table>
     </div>
