@@ -1,32 +1,43 @@
 import React from 'react'
-import Table from './Table'
 import { useState } from 'react'
+import { expense } from '../App'
+import Table from './Table'
+import Submissions from './Submissions'
 
 
 
-
-function handleSubmit(event) {
-
-  event.preventDefault()
-
-alert('submited')
-
-}
 function handleClick() {
 
 }
 function handleChange(event) {
-
+console.log(event.target.value)
 
 }
 function Form() {
-     const [expense,setExpense]= useState([
-      {id:1, expense:"food",description:"ugali",category:"food",amount:"200",date:"12/20/2024"},
-      {id:2, expense:"food",description:"ugali",category:"food",amount:"200",date:"12/20/2024"},
-      {id:3, expense:"food",description:"ugali",category:"food",amount:"200",date:"12/20/2024"},
-      {id:4, expense:"food",description:"ugali",category:"food",amount:"200",date:"12/20/2024"}
-     ])
 
+const [submittedForm,setSubmittedForm]=useState(expense)
+
+function handleSubmit() {
+  const formData = expense
+  const dataArray = [...submittedForm,formData]
+  setSubmittedForm(dataArray)
+
+  }
+  const submissions =submittedForm.map((item)=>{
+  return (
+
+     <tr key={item.id}>
+        <td>{item.expense}</td>
+        <td>{item.description}</td>
+        <td>{item.category}</td>
+        <td>{item.amount}</td>
+        <td>{item.date}</td>
+
+      </tr>
+
+
+  )
+  })
   return (
     <div id='form-submit'>
         <form onSubmit={handleSubmit}>
@@ -40,9 +51,14 @@ function Form() {
             <button type='submit' id='button'onClick={handleClick}>submit</button>
         </form>
 
-        <Table items ={expense} />
+        <Table items={expense}/>
+
+
     </div>
   )
+  const newSubmissions={submissions}
+  console.log(newSubmissions);
+  
 }
 
 export default Form

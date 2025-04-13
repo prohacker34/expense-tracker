@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 function Table({items}) {
   return (
     <div id='container'>
@@ -13,8 +14,9 @@ function Table({items}) {
     <th>amount</th>
     <th>date</th>
     </tr>
-    {items.map((item)=>
-        <tr>
+    {
+    items.map((item)=>
+        <tr key={item.id}>
         <td>{item.expense}</td>
         <td>{item.description}</td>
         <td>{item.category}</td>
