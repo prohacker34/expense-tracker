@@ -71,3 +71,12 @@ input [type="text"]{
   display: inline-block;
   font-size: 16px;
 }
+div #submissions
+  {
+    background-color: lightblue;
+    width: 510px;
+    height: 510px;
+    overflow: scroll;
+  }
+
+

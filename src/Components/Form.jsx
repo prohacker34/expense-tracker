@@ -1,8 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
-import { expense } from '../App'
 import Table from './Table'
-import Submissions from './Submissions'
+
 
 
 
@@ -10,31 +9,35 @@ function handleClick() {
 
 }
 function handleChange(event) {
-console.log(event.target.value)
+ setSubmittedForm({...submittedForm,[event.target.value]:event.target.value})
 
 }
 function Form() {
+  const [myExpense,setMyExpense] = useState( [
+    {id:1, expense:"food",description:"ugali",category:"food",amount:"200",date:"12/20/2024"}
 
-const [submittedForm,setSubmittedForm]=useState(expense)
+   ])
 
-function handleSubmit() {
-  const formData = expense
+const [submittedForm,setSubmittedForm]=useState(myExpense)
+
+function handleSubmit(event) {
+event.preventDefault()
+  const formData = [{myExpense}]
   const dataArray = [...submittedForm,formData]
   setSubmittedForm(dataArray)
-
+   setMyExpense({expense:"",description:"",category:"",amount:"",data:""})
   }
-  const submissions =submittedForm.map((item)=>{
+  const submissions =submittedForm.map((newItem)=>{
   return (
 
-     <tr key={item.id}>
-        <td>{item.expense}</td>
-        <td>{item.description}</td>
-        <td>{item.category}</td>
-        <td>{item.amount}</td>
-        <td>{item.date}</td>
+     <tr key={newItem.id}>
+        <td>{newItem.expense}</td>
+        <td>{newItem.description}</td>
+        <td>{newItem.category}</td>
+        <td>{newItem.amount}</td>
+        <td>{newItem.date}</td>
 
       </tr>
-
 
   )
   })
@@ -43,22 +46,21 @@ function handleSubmit() {
         <form onSubmit={handleSubmit}>
             <h1>Add Expense</h1>
             <p>Enter your details below</p>
-            <input type="text"     onChange={handleChange}placeholder='Enter expense name'className='form-input'/><br />
-            <input type="text"    onChange={handleChange}placeholder='Enter expense description'className='form-input'/><br />
-            <input type="text"    onChange={handleChange}placeholder='Enter expense category'className='form-input'/><br />
-            <input type="text"    onChange={handleChange}placeholder='Enter amount'className='form-input'/><br />
-            <input type="date" onChange={handleChange}placeholder='dd/mm/yr'className='form-input'/><br />
+            <input value={submittedForm.expense}type="text"     onChange={handleChange}placeholder='Enter expense name'className='form-input'/><br />
+            <input value={submittedForm.description}type="text"    onChange={handleChange}placeholder='Enter expense description'className='form-input'/><br />
+            <input value={submittedForm.category}type="text"    onChange={handleChange}placeholder='Enter expense category'className='form-input'/><br />
+            <input value={submittedForm.amount}type="text"    onChange={handleChange}placeholder='Enter amount'className='form-input'/><br />
+            <input value={submittedForm.date}type="date" onChange={handleChange}placeholder='dd/mm/yr'className='form-input'/><br />
             <button type='submit' id='button'onClick={handleClick}>submit</button>
         </form>
 
-        <Table items={expense}/>
+        <Table items={submissions} />
 
 
     </div>
   )
-  const newSubmissions={submissions}
-  console.log(newSubmissions);
-  
+
+
 }
 
 export default Form
