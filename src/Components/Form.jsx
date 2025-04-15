@@ -17,9 +17,14 @@ function Form() {
       }));
 
      }
-
       function handleSubmit(event) {
         event.preventDefault();
+        const { expense, description, category, amount, date } = submittedForm;
+
+        if (!expense || !description || !category || !amount || !date) {
+          alert("Please fill in all fields before submitting.");
+          return;
+        }
         const newExpense = {
           ...submittedForm,
           id: myExpense.length + 1
@@ -61,8 +66,6 @@ const submissions =myExpense.map((item)=>{
 
     </div>
   )
-
-
 }
 
 export default Form
